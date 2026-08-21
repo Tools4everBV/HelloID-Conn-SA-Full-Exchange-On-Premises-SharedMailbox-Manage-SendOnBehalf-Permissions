@@ -1,0 +1,38 @@
+[
+    {
+        "key":  "Guid",
+        "type":  0
+    },
+    {
+        "key":  "Id",
+        "type":  0
+    },
+    {
+        "key":  "Sid",
+        "type":  0
+    },
+    {
+        "key":  "DisplayName",
+        "type":  0
+    },
+    {
+        "key":  "WindowsEmailAddress",
+        "type":  0
+    },
+    {
+        "key":  "UserPrincipalName",
+        "type":  0
+    },
+    {
+        "key":  "SamAccountName",
+        "type":  0
+    },
+    {
+        "key":  "Name",
+        "type":  0
+    },
+    {
+        "key":  "DistinguishedName",
+        "type":  0
+    }
+]
