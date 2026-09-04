@@ -1,161 +1,169 @@
 [
     {
-        "label":  "Select user",
-        "fields":  [
-                       {
-                           "templateOptions":  {
-
-                                               },
-                           "type":  "text",
-                           "summaryVisibility":  "Show",
-                           "body":  "Select the user that should aquire SendOnBehalf rights ",
-                           "requiresTemplateOptions":  false,
-                           "requiresKey":  false,
-                           "requiresDataSource":  false
-                       },
-                       {
-                           "key":  "textSearchUser",
-                           "templateOptions":  {
-                                                   "label":  "Search user",
-                                                   "placeholder":  "\u003cEnter search filter\u003e",
-                                                   "required":  true
-                                               },
-                           "type":  "input",
-                           "summaryVisibility":  "Hide element",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  false
-                       },
-                       {
-                           "key":  "User",
-                           "templateOptions":  {
-                                                   "label":  "Users",
-                                                   "required":  true,
-                                                   "grid":  {
-                                                                "columns":  [
-                                                                                {
-                                                                                    "headerName":  "Display Name",
-                                                                                    "field":  "DisplayName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Sam Account Name",
-                                                                                    "field":  "SamAccountName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Distinguished Name",
-                                                                                    "field":  "DistinguishedName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "GUID",
-                                                                                    "field":  "GUID"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Recipient Type Details",
-                                                                                    "field":  "RecipientTypeDetails"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "User Principal Name",
-                                                                                    "field":  "UserPrincipalName"
-                                                                                }
-                                                                            ],
-                                                                "height":  300,
-                                                                "rowSelection":  "single"
-                                                            },
-                                                   "dataSourceConfig":  {
-                                                                            "dataSourceGuid":  "$dataSourceGuid_0",
-                                                                            "input":  {
-                                                                                          "propertyInputs":  [
-                                                                                                                 {
-                                                                                                                     "propertyName":  "SearchUser",
-                                                                                                                     "otherFieldValue":  {
-                                                                                                                                             "otherFieldKey":  "textSearchUser"
-                                                                                                                                         }
-                                                                                                                 }
-                                                                                                             ]
-                                                                                      }
-                                                                        },
-                                                   "useDefault":  false
-                                               },
-                           "type":  "grid",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  true
-                       }
-                   ]
+        "label": "Select user account",
+        "fields": [
+            {
+                "templateOptions": {
+                    "title": "Select the user that should aquire SendOnBehalf rights ",
+                    "titleField": "",
+                    "bannerType": "Info",
+                    "useBody": false
+                },
+                "type": "textbanner",
+                "summaryVisibility": "Hide element",
+                "body": "Text Banner Content",
+                "requiresTemplateOptions": false,
+                "requiresKey": false,
+                "requiresDataSource": false
+            },
+            {
+                "key": "searchfield",
+                "templateOptions": {
+                    "label": "Search (wildcard search in Name, Display name, UserPrincipalName and Mail or use * to search all users)",
+                    "placeholder": "Name, Display name, UserPrincipalName or Mail (use * to search all users)",
+                    "required": true
+                },
+                "type": "input",
+                "summaryVisibility": "Hide element",
+                "requiresTemplateOptions": true,
+                "requiresKey": true,
+                "requiresDataSource": false
+            },
+            {
+                "key": "gridUsers",
+                "templateOptions": {
+                    "label": "Select user account",
+                    "required": true,
+                    "grid": {
+                        "columns": [
+                            {
+                                "headerName": "Display Name",
+                                "field": "DisplayName"
+                            },
+                            {
+                                "headerName": "Sam Account Name",
+                                "field": "SamAccountName"
+                            },
+                            {
+                                "headerName": "User Principal Name",
+                                "field": "UserPrincipalName"
+                            },
+                            {
+                                "headerName": "Email Address",
+                                "field": "WindowsEmailAddress"
+                            }
+                        ],
+                        "height": 300,
+                        "rowSelection": "single"
+                    },
+                    "dataSourceConfig": {
+                        "dataSourceGuid": "$dataSourceGuid_0",
+                        "input": {
+                            "propertyInputs": [
+                                {
+                                    "propertyName": "SearchUser",
+                                    "otherFieldValue": {
+                                        "otherFieldKey": "searchfield"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "useDefault": false,
+                    "allowCsvDownload": true
+                },
+                "type": "grid",
+                "summaryVisibility": "Show",
+                "requiresTemplateOptions": true,
+                "requiresKey": true,
+                "requiresDataSource": true
+            }
+        ]
     },
     {
-        "label":  "Select mailbox",
-        "fields":  [
-                       {
-                           "templateOptions":  {
-
-                                               },
-                           "type":  "text",
-                           "summaryVisibility":  "Show",
-                           "body":  "Select the mailbox account to be able to send on behalf of",
-                           "requiresTemplateOptions":  false,
-                           "requiresKey":  false,
-                           "requiresDataSource":  false
-                       },
-                       {
-                           "key":  "textSeachMailbox",
-                           "templateOptions":  {
-                                                   "label":  "Search Mailbox",
-                                                   "placeholder":  "\u003cEnter search filter\u003e",
-                                                   "required":  true
-                                               },
-                           "type":  "input",
-                           "summaryVisibility":  "Hide element",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  false
-                       },
-                       {
-                           "key":  "Mailbox",
-                           "templateOptions":  {
-                                                   "label":  "Mailbox",
-                                                   "required":  true,
-                                                   "grid":  {
-                                                                "columns":  [
-                                                                                {
-                                                                                    "headerName":  "Sam Account Name",
-                                                                                    "field":  "SamAccountName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "User Principal Name",
-                                                                                    "field":  "UserPrincipalName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Exchange Guid",
-                                                                                    "field":  "ExchangeGuid"
-                                                                                }
-                                                                            ],
-                                                                "height":  300,
-                                                                "rowSelection":  "single"
-                                                            },
-                                                   "dataSourceConfig":  {
-                                                                            "dataSourceGuid":  "$dataSourceGuid_1",
-                                                                            "input":  {
-                                                                                          "propertyInputs":  [
-                                                                                                                 {
-                                                                                                                     "propertyName":  "SearchMailbox",
-                                                                                                                     "otherFieldValue":  {
-                                                                                                                                             "otherFieldKey":  "textSeachMailbox"
-                                                                                                                                         }
-                                                                                                                 }
-                                                                                                             ]
-                                                                                      }
-                                                                        },
-                                                   "useFilter":  true,
-                                                   "useDefault":  false
-                                               },
-                           "type":  "grid",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  true
-                       }
-                   ]
+        "label": "Select mailbox",
+        "fields": [
+            {
+                "templateOptions": {
+                    "title": "Select the mailbox account to be able to send on behalf of",
+                    "titleField": "",
+                    "bannerType": "Info",
+                    "useBody": false
+                },
+                "type": "textbanner",
+                "summaryVisibility": "Hide element",
+                "body": "Text Banner Content",
+                "requiresTemplateOptions": false,
+                "requiresKey": false,
+                "requiresDataSource": false
+            },
+            {
+                "key": "searchMailbox",
+                "templateOptions": {
+                    "label": "Search Sharedmailbox",
+                    "placeholder": "",
+                    "required": true
+                },
+                "type": "input",
+                "summaryVisibility": "Hide element",
+                "requiresTemplateOptions": true,
+                "requiresKey": true,
+                "requiresDataSource": false
+            },
+            {
+                "key": "gridmailbox",
+                "templateOptions": {
+                    "label": "Select Sharedmailbox",
+                    "required": true,
+                    "grid": {
+                        "columns": [
+                            {
+                                "headerName": "Display Name",
+                                "field": "DisplayName"
+                            },
+                            {
+                                "headerName": "Primary Smtp Address",
+                                "field": "PrimarySmtpAddress"
+                            },
+                            {
+                                "headerName": "Email Addresses",
+                                "field": "EmailAddresses"
+                            },
+                            {
+                                "headerName": "Alias",
+                                "field": "Alias"
+                            },
+                            {
+                                "headerName": "Recipient Type Details",
+                                "field": "RecipientTypeDetails"
+                            }
+                        ],
+                        "height": 300,
+                        "rowSelection": "single"
+                    },
+                    "dataSourceConfig": {
+                        "dataSourceGuid": "$dataSourceGuid_1",
+                        "input": {
+                            "propertyInputs": [
+                                {
+                                    "propertyName": "searchValue",
+                                    "otherFieldValue": {
+                                        "otherFieldKey": "searchMailbox"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "useFilter": true,
+                    "useDefault": false,
+                    "allowCsvDownload": true
+                },
+                "type": "grid",
+                "summaryVisibility": "Show",
+                "requiresTemplateOptions": true,
+                "requiresKey": true,
+                "requiresDataSource": true
+            }
+        ]
     }
 ]
